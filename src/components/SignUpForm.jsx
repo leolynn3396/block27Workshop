@@ -7,7 +7,8 @@ export default function SignUpForm() {
   const [error, setError] = useState(null);
 
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); // preventDefault() prevents our page refresh
+    // console.log("Hello 👋") replacing with a try/catch block
     try {
         const response = await fetch("https://fsa-jwt-practice.herokuapp.com/signup", {
             method: "POST",
@@ -22,19 +23,19 @@ export default function SignUpForm() {
     }
 }
 
-
   return (
     //Finally, pass this handleSubmit to the opening form tag's onSubmit property. 
     //Because the network request could fail, start by writing a try/catch block in our handleSubmit function. After you preventDefault delete your console.log and replace it with a try/catch. In your catch block, pass the error.message to your setError function. This way, we can store a server error in the application state and display it.
     <>
         <h2>Sign Up</h2>
         {error && <p>{error}</p>}
+        {/* 12. After your h2, open up some { } so you can 'escape' into Javascript. Conditionally render your error message in a p tag, based on if the error property in your state is truthy / falsy.
+
+ */}
         <form onSubmit={handleSubmit}>
             <label>
                 Username:{" "}
-                <input
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}  //8. Assign each value property of your input to its corresponding state value. Similarly, pass each onChange property to a callback function. These callback functions should be defined to take an event, and pass the event.tagert.value to the corresponding useState setter.
+                <input value={username} onChange={(e) => setUsername(e.target.value)}  //8. Assign each value property of your input to its corresponding state value. Similarly, pass each onChange property to a callback function. These callback functions should be defined to take an event, and pass the event.tagert.value to the corresponding useState setter.
                 />
             </label>
             <label>

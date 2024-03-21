@@ -35,7 +35,8 @@ export default function Authenticate(props) {
         {successMessage && <p>{successMessage}</p>}
         {loggedInUser && <p>{loggedInUser}</p>}
         {error && <p>{error}</p>} 
-        <button onClick={handleClick}>Authenticate Token!</button>
+        <button onClick={handleClick}>Authenticate Token!
+        </button>
       </div> //7. Create a button, which onClick sends a request to the API and passes the token in an Authentication header. Underneath your h2 create a button element with text saying "Authenticate Token" or something similar.
 
 

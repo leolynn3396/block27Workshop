@@ -9,9 +9,9 @@ import SignUpForm from './components/SignUpForm';
   return (
     //we need to pass these values to each component. Pass the setToken function to your SignUpForm component, and then pass the token value to your Authenticate component. This will allow us to set the token with our API response, and read/send the token back in our Authenticate component.
     <>
-      <Authenticate token ={token} setToken={setToken} />
-      <SignUpForm token={token} setToken={setToken}/>
-    </>
+    <SignUpForm setToken={setToken} />
+    <Authenticate token={token} />
+  </>
   )
 }
 
